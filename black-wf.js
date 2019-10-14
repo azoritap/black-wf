@@ -41,6 +41,10 @@ $(document).ready(function() {
     });
 
     //Titulo tarjetas
+    $('.card-style__header, .card__header').css({
+        'margin-bottom': '5px'
+    });
+
     $('.card-header__title').css({
         'color': '#df471c',
         'font-size': '14px'
@@ -54,11 +58,11 @@ $(document).ready(function() {
     $('.card .flexbox-grow.supporting-central-field').css('background-color', '#252525');
     $('.card h1.title-description.ng-binding').css({
         'color': '#ffffff',
-        'font-size': '20px'
+        'font-size': '14px'
     });
     $('.card h4.title-description.ng-binding').css({
         'color': '#ffffff',
-        'font-size': '14px'
+        'font-size': '11px'
     });
     $('.card .supporting-statement-central-field').css('background-color', '#252525');
     $('.card .supporting-statement-central-field p').css({
@@ -74,14 +78,20 @@ $(document).ready(function() {
     $('.what-is-it-card, .comments-card').hide();
 
     //Orden tarjetas
-    $('#descriptionDiv').after($('#safety-card'));
-    $('#descriptionDiv').after($('#uniqueness-card'));
-    $('#descriptionDiv').after($('#histcult-card'));
+    $('#descriptionDiv').append($('#histcult-card .card__header.card-header'));
+    $('#descriptionDiv').append($('#histcult-card .card__body'));
+    $('#descriptionDiv').append($('#histcult-card .card__footer'));
+    $('#descriptionDiv').append($('#uniqueness-card .card__header.card-header'));
+    $('#descriptionDiv').append($('#uniqueness-card .card__body'));
+    $('#descriptionDiv').append($('#uniqueness-card .card__footer'));
+    $('#descriptionDiv').append($('#safety-card .card__header.card-header'));
+    $('#descriptionDiv').append($('#safety-card .card__body'));
+    $('#descriptionDiv').append($('#safety-card .card__footer'));
     $('#three-card-container').remove();
 
     $('#photo-card').css({
         'order': 1,
-        'height': '275px'
+        'height': '390px'
     });
 
     $('#photo-card .card__header.card-header').hide();
@@ -89,43 +99,19 @@ $(document).ready(function() {
     $('#supporting-card').removeClass('ng-hide');
     $('#supporting-card').css({
         'order': 2,
-        'height': '275px'
+        'height': '390px'
     });
 
     $('#supporting-card .card__header.card-header').hide();
 
     $('#descriptionDiv').css({
         'order': 3,
-        'height': '275px'
+        'height': '390px'
     });
 
-    $('#histcult-card').removeClass().addClass('card').addClass('card--expand').css({
-        'order': 4
-    });
-
-    $('#histcult-card .card__header.card-header').css({
-        'margin-bottom': '0px'
-    });
-
-    $('#uniqueness-card').removeClass().addClass('card').addClass('card--expand').css({
-        'order': 5
-    });
-
-    $('#uniqueness-card .card__header.card-header').css({
-        'margin-bottom': '0px'
-    });
-
-    $('#safety-card').removeClass().addClass('card').addClass('card--expand').css({
-        'order': 6
-    });
-
-    $('#safety-card .card__header.card-header').css({
-        'margin-bottom': '0px'
-    });
-
-    $('#map-card').css({
-        'order': 7,
-        'height': '400px'
+    $('#map-card').removeClass().addClass('card').addClass('card--expand').css({
+        'order': 5,
+        'height': '390px'
     });
 
     $('#map-card .card__footer').css({
@@ -137,8 +123,8 @@ $(document).ready(function() {
     });
     $('#supporting-card').prepend($address);
 
-    $('#duplicates-card').css({
-        'order': 8,
+    $('#duplicates-card').removeClass().addClass('card').addClass('card--expand').css({
+        'order': 6,
         'height': '400px',
         'color': '#252525',
     });
