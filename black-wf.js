@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      0.6
 // @description  try to take over the world!
-// @author       klinx
+// @author       klinsk
 // @match        https://wayfarer.nianticlabs.com/review
 // @grant        none
 // @run-at       document-idle
