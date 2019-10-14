@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Black Wayfarer Lite
-// @namespace    http://tampermonkey.net/
+// @namespace    https://github.com/klinsk/black-wf
 // @version      0.8
 // @description  try to take over the world!
 // @author       klinsk
