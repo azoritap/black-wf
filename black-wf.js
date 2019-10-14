@@ -125,7 +125,7 @@ $(document).ready(function() {
 
     $('#duplicates-card').removeClass().addClass('card').addClass('card--expand').css({
         'order': 6,
-        'height': '400px',
+        'height': '390px',
         'color': '#252525',
     });
 
