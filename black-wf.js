@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Black Wayfarer Lite
 // @namespace    https://github.com/klinsk/black-wf
-// @version      0.9.2
+// @version      0.9.3
 // @description  Black Wayfarer Review Lite Version
 // @author       klinsk
 // @match        https://wayfarer.nianticlabs.com/review
@@ -39,8 +39,6 @@ $(document).ready(function() {
         'color': '#ffffff',
         'height': '90px',
         'min-height': '90px',
-        'width': '360px',
-        'min-width': '360px',
         'line-height': '1.1',
         'font-size': '14px',
         'box-shadow': '1px 2px 4px #1b1b1b'
@@ -105,6 +103,20 @@ $(document).ready(function() {
     });
 
     $('#photo-card .card__header.card-header').hide();
+
+    var $fiveStarsButton = $('<button class="button-primary">5✭</button>').css({
+        'min-width': '60px'
+    });
+    var $fiveStarsButtonDiv = $('<div class="bw-fiveStars submit-btn-container"></div>').css({
+        'float': 'left'
+    });
+    $fiveStarsButtonDiv.append($fiveStarsButton);
+
+    $fiveStarsButton.on('click', function() {
+        $('.five-stars button:last-child').click();
+    });
+
+    $('#photo-card .five-stars').after($fiveStarsButtonDiv);
 
     $('#supporting-card').removeClass('ng-hide');
     $('#supporting-card').css({
@@ -215,14 +227,4 @@ $(document).ready(function() {
         'width': '100%'
     });
 
-    var $fiveStarsButton = $('<button class="button-primary">✭✭✭✭✭</button>');
-    var $fiveStarsButtonDiv = $('<div class="bw-fiveStars submit-btn-container" style="margin-left: 30px;"></div>');
-    $fiveStarsButtonDiv.append($fiveStarsButton);
-
-    $('.answer-btn-container').append($fiveStarsButtonDiv);
-
-    $fiveStarsButton.on('click', function() {
-        $('.five-stars button:last-child').click();
-        //$('#submitDiv button').click();
-    });
 });
