@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Black Wayfarer Lite
 // @namespace    https://github.com/klinsk/black-wf
-// @version      0.9
+// @version      0.9.1
 // @description  Black Wayfarer Review Lite Version
 // @author       klinsk
 // @match        https://wayfarer.nianticlabs.com/review
@@ -35,7 +35,7 @@ $(document).ready(function() {
 
     //Tarjetas
     $('.card').css({
-        'background-color': '#252525',
+        'background-color': '#353535',
         'color': '#ffffff',
         'height': '90px',
         'min-height': '90px',
@@ -43,11 +43,11 @@ $(document).ready(function() {
         'min-width': '360px',
         'line-height': '1.1',
         'font-size': '14px',
-        'box-shadow': '1px 2px 4px #191515'
+        'box-shadow': '1px 2px 4px #1b1b1b'
     });
 
     $('.button-secondary').css({
-        'box-shadow': '1px 2px 4px #191515'
+        'box-shadow': '1px 2px 4px #1b1b1b'
     });
 
     //Titulo tarjetas
@@ -56,7 +56,7 @@ $(document).ready(function() {
     });
 
     $('.card-header__title').css({
-        'color': '#df471c',
+        'color': '#E47252',
         'font-size': '14px'
     });
 
@@ -65,7 +65,7 @@ $(document).ready(function() {
     });
 
     //Titulos dentro tarjetas
-    $('.card .flexbox-grow.supporting-central-field').css('background-color', '#252525');
+    $('.card .flexbox-grow.supporting-central-field').css('background-color', '#353535');
     $('.card h1.title-description.ng-binding').css({
         'color': '#ffffff',
         'font-size': '14px'
@@ -74,7 +74,7 @@ $(document).ready(function() {
         'color': '#ffffff',
         'font-size': '11px'
     });
-    $('.card .supporting-statement-central-field').css('background-color', '#252525');
+    $('.card .supporting-statement-central-field').css('background-color', '#353535');
     $('.card .supporting-statement-central-field p').css({
         'color': '#ffffff',
         'font-size': '11px'
@@ -136,7 +136,7 @@ $(document).ready(function() {
     $('#duplicates-card').removeClass().addClass('card').addClass('card--expand').css({
         'order': 6,
         'height': '390px',
-        'color': '#252525',
+        'color': '#353535',
     });
 
     $('.known-information-card').css({
@@ -144,7 +144,7 @@ $(document).ready(function() {
         'min-width': '360px',
         'min-height': '90px',
         'height': '500px',
-        'background-color': '#252525',
+        'background-color': '#353535',
         'color': '#ffffff',
         'overflow-y': 'hidden'
     });
