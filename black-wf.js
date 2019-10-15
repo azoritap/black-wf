@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Black Wayfarer Lite
 // @namespace    https://github.com/klinsk/black-wf
-// @version      0.9.3
+// @version      0.9.4
 // @description  Black Wayfarer Review Lite Version
 // @author       klinsk
 // @match        https://wayfarer.nianticlabs.com/review
@@ -21,7 +21,8 @@ $(document).ready(function() {
 
     //Fondo Negro
     $('.container').css({
-        'background-color': '#252525'
+        'background-color': '#252525',
+        'padding': '0px 15px 0px 15px'
     });
 
     //Oculta cabecera
@@ -64,11 +65,11 @@ $(document).ready(function() {
 
     //Titulos dentro tarjetas
     $('.card .flexbox-grow.supporting-central-field').css('background-color', '#353535');
-    $('.card h1.title-description.ng-binding').css({
+    $('.card h1.title-description').css({
         'color': '#ffffff',
         'font-size': '14px'
     });
-    $('.card h4.title-description.ng-binding').css({
+    $('.card h4.title-description').css({
         'color': '#ffffff',
         'font-size': '11px'
     });
