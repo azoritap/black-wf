@@ -19,6 +19,11 @@ waitForKeyElements (".card-area[ng-show*=EDIT]:not(.ng-hide)", function() {
 
 $(document).ready(function() {
 
+    //Fondo Negro
+    $('.container').css({
+        'background-color': '#252525'
+    });
+
     //Oculta cabecera
     $('.answer-header').hide();
     $('.card-area').css({
@@ -37,7 +42,12 @@ $(document).ready(function() {
         'width': '360px',
         'min-width': '360px',
         'line-height': '1.1',
-        'font-size': '14px'
+        'font-size': '14px',
+        'box-shadow': '1px 2px 4px #191515'
+    });
+
+    $('.button-secondary').css({
+        'box-shadow': '1px 2px 4px #191515'
     });
 
     //Titulo tarjetas
@@ -118,9 +128,9 @@ $(document).ready(function() {
         'margin-top': '0px'
     });
 
-    var $address = $('#map-card .flex-map-row *:last-child').removeClass('ng-hide').css({
-        'margin-bottom': '15px'
-    });
+    var $address = $('#map-card .flex-map-row *:last-child').removeClass('ng-hide').attr('style',
+        'margin-bottom: 15px; display: block !important;'
+    );
     $('#supporting-card').prepend($address);
 
     $('#duplicates-card').removeClass().addClass('card').addClass('card--expand').css({
