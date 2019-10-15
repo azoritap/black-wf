@@ -13,7 +13,7 @@
 
 var $ = window.$;
 
-waitForKeyElements (".card-area[ng-show*=EDIT]:not(.ng-hide)", function() {
+waitForKeyElements(".card-area[ng-show*=EDIT]:not(.ng-hide)", function() {
     $('.bw-fiveStars').hide();
 });
 
@@ -128,6 +128,30 @@ $(document).ready(function() {
         'margin-top': '0px'
     });
 
+    //Map reset new icon
+    $('#map-card .reset-map-icon').hide();
+
+    var $resetMapIcon = $('<div class="bw-reset-map-icon"></div>').html('↻').css({
+        'font-size': '20px',
+        'color': '#ffffff',
+        'background': 'none',
+        'background-size': 'unset',
+        'opacity': 1,
+        'margin-left': '15px',
+        'width': '24px',
+        'height': '24px',
+        'text-align': 'right',
+        'display': 'inline-block;',
+        'margin': '0 auto',
+        'cursor': 'pointer'
+    })
+
+    $resetMapIcon.on('click', function() {
+        $('#map-card .reset-map-icon').click();
+    });
+
+    $('#map-card .card-header__actions').append($resetMapIcon);
+
     var $address = $('#map-card .flex-map-row *:last-child').removeClass('ng-hide').attr('style',
         'margin-bottom: 15px; display: block !important;'
     );
@@ -138,6 +162,29 @@ $(document).ready(function() {
         'height': '390px',
         'color': '#353535',
     });
+
+    //Map reset new icon
+    $('#duplicates-card .reset-map-icon').hide();
+
+    var $resetDuplicatesMapIcon = $('<div class="bw-reset-map-icon"></div>').html('↻').css({
+        'font-size': '20px',
+        'color': '#ffffff',
+        'background': 'none',
+        'background-size': 'unset',
+        'opacity': 1,
+        'margin-left': '15px',
+        'width': '24px',
+        'height': '24px',
+        'text-align': 'right',
+        'display': 'inline-block;',
+        'cursor': 'pointer'
+    })
+
+    $resetDuplicatesMapIcon.on('click', function() {
+        $('#duplicates-card .reset-map-icon').click();
+    });
+
+    $('#duplicates-card .card-header__top').append($resetDuplicatesMapIcon);
 
     $('.known-information-card').css({
         'max-width': '360px',
