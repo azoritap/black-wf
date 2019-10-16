@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Black Wayfarer Lite
 // @namespace    https://github.com/klinsk/black-wf
-// @version      0.9.5
+// @version      0.9.6
 // @description  Black Wayfarer Review Lite Version
 // @author       klinsk
 // @match        https://wayfarer.nianticlabs.com/review
@@ -224,9 +224,6 @@ $(document).ready(function() {
 
     $('.known-information-card h3').css({
         'color': '#ffffff',
-    });
-
-    $('.known-information-title').css({
         'font-size': '14px'
     });
 
