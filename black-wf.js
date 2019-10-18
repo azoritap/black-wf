@@ -25,7 +25,6 @@ function sendCountdown() {
         'background': 'rgba(0,0,0,.085)',
         'cursor': 'default'
     });
-
     // Update the count down every 1 second
     var x = setInterval(function() {
 
