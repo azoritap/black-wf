@@ -1,11 +1,7 @@
 // ==UserScript==
 // @name         Black Wayfarer Lite
 // @namespace    https://github.com/klinsk/black-wf
-<<<<<<< HEAD
 // @version      1.0
-=======
-// @version      0.9.7
->>>>>>> 596fe5fd215cffe187b2cd570fc164e3b9ca2c00
 // @description  Black Wayfarer Review Lite Version
 // @author       klinsk
 // @match        https://wayfarer.nianticlabs.com/review
