@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Black Wayfarer Lite
 // @namespace    https://github.com/klinsk/black-wf
-// @version      0.9.6
+// @version      1.0
 // @description  Black Wayfarer Review Lite Version
 // @author       klinsk
 // @match        https://wayfarer.nianticlabs.com/review
@@ -12,6 +12,41 @@
 // ==/UserScript==
 
 var $ = window.$;
+
+function sendCountdown() {
+    var dummyNow = new Date();
+    dummyNow.setSeconds(dummyNow.getSeconds() + 10);
+    var countDownDate = dummyNow.getTime();
+    $('#submitDiv button').append($('<span class="bw-countdown"></span>'));
+    $('#submitDiv button').css({
+        'color': '#666',
+        'background': 'rgba(0,0,0,.085)',
+        'cursor': 'default'
+    });
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+
+      // Get today's date and time
+      var now = new Date().getTime();
+
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+
+      // Time calculations for days, hours, minutes and seconds
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000) + 1;
+
+      // Display the result in the element
+      $('#submitDiv button .bw-countdown').html(' ' + seconds);
+
+      // If the count down is finished, write some text
+      if (distance < 0) {
+        clearInterval(x);
+        $('#submitDiv button .bw-countdown').remove();
+        $('#submitDiv button').removeAttr('style');
+      }
+    }, 1000);
+}
 
 waitForKeyElements(".card-area[ng-show*=EDIT]:not(.ng-hide)", function() {
     $('.bw-fiveStars').hide();
@@ -246,4 +281,5 @@ $(document).ready(function() {
         'width': '100%'
     });
 
+    sendCountdown();
 });
