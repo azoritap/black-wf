@@ -1,7 +1,11 @@
 // ==UserScript==
 // @name         Black Wayfarer Lite
 // @namespace    https://github.com/klinsk/black-wf
+<<<<<<< HEAD
 // @version      1.0
+=======
+// @version      0.9.7
+>>>>>>> 596fe5fd215cffe187b2cd570fc164e3b9ca2c00
 // @description  Black Wayfarer Review Lite Version
 // @author       klinsk
 // @match        https://wayfarer.nianticlabs.com/review
@@ -9,6 +13,8 @@
 // @run-at       document-idle
 // @require      http://code.jquery.com/jquery-3.4.1.min.js
 // @require      https://gist.github.com/raw/2625891/waitForKeyElements.js
+// @updateURL    https://github.com/klinsk/black-wf/raw/master/black-wf.js
+// @downloadURL  https://github.com/klinsk/black-wf/raw/master/black-wf.js
 // ==/UserScript==
 
 var $ = window.$;
