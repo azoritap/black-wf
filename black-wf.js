@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Black Wayfarer Lite
 // @namespace    https://github.com/klinsk/black-wf
-// @version      1.0.2
+// @version      1.0.3
 // @description  Black Wayfarer Review Lite Version
 // @author       klinsk
 // @match        https://wayfarer.nianticlabs.com/review
@@ -24,7 +24,7 @@ function sendCountdown() {
         'color': '#666',
         'background': 'rgba(0,0,0,.085)',
         'cursor': 'default',
-        'pointer-events': 'none
+        'pointer-events': 'none'
     });
     // Update the count down every 1 second
     var x = setInterval(function() {
