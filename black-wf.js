@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Black Wayfarer Lite
 // @namespace    https://github.com/klinsk/black-wf
-// @version      1.1.1
+// @version      1.1.2
 // @description  Black Wayfarer Review Lite Version
 // @author       klinsk
 // @match        https://wayfarer.nianticlabs.com/review
@@ -124,8 +124,13 @@ $(document).ready(function() {
         'color': '#ffffff',
         'font-size': '11px'
     });
-    $('.card .supporting-statement-central-field').css('background-color', '#353535');
-    $('.card .supporting-statement-central-field p').css({
+
+    $('.supporting-statement-central-field').css({
+        'padding': '15px 0px 0px 0px',
+        'background-color': '#353535'
+    });
+
+    $('.supporting-statement-central-field p').css({
         'color': '#ffffff',
         'font-size': '11px'
     });
@@ -219,18 +224,7 @@ $(document).ready(function() {
     var $address = $('#map-card .flex-map-row *:last-child').removeClass('ng-hide').attr('style',
         'margin-bottom: 15px; display: block !important; font-size: 11px;'
     );
-    $address.text($address.text().split(':')[1]);
     $('#supporting-card').prepend($address);
-
-    $('.supporting-statement-central-field').css({
-        'padding': '15px 0px 0px 0px',
-        'background-color': '#363636'
-    });
-
-    $('.supporting-statement-central-field p').css({
-        'color': '#ffffff',
-        'font-size': '11px'
-    });
 
     $('#duplicates-card').removeClass().addClass('card').addClass('card--expand').css({
         'order': 6,
