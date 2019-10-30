@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Black Wayfarer Lite
 // @namespace    https://github.com/klinsk/black-wf
-// @version      1.0.3
+// @version      1.1
 // @description  Black Wayfarer Review Lite Version
 // @author       klinsk
 // @match        https://wayfarer.nianticlabs.com/review
@@ -29,24 +29,24 @@ function sendCountdown() {
     // Update the count down every 1 second
     var x = setInterval(function() {
 
-      // Get today's date and time
-      var now = new Date().getTime();
+        // Get today's date and time
+        var now = new Date().getTime();
 
-      // Find the distance between now and the count down date
-      var distance = countDownDate - now;
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
 
-      // Time calculations for days, hours, minutes and seconds
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000) + 1;
+        // Time calculations for days, hours, minutes and seconds
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000) + 1;
 
-      // Display the result in the element
-      $('#submitDiv button .bw-countdown').html(' ' + seconds);
+        // Display the result in the element
+        $('#submitDiv button .bw-countdown').html(' ' + seconds);
 
-      // If the count down is finished, write some text
-      if (distance < 0) {
-        clearInterval(x);
-        $('#submitDiv button .bw-countdown').remove();
-        $('#submitDiv button').removeAttr('style');
-      }
+        // If the count down is finished, write some text
+        if (distance < 0) {
+            clearInterval(x);
+            $('#submitDiv button .bw-countdown').remove();
+            $('#submitDiv button').removeAttr('style');
+        }
     }, 1000);
 }
 
@@ -217,9 +217,19 @@ $(document).ready(function() {
     $('#map-card .card-header__actions').append($resetMapIcon);
 
     var $address = $('#map-card .flex-map-row *:last-child').removeClass('ng-hide').attr('style',
-        'margin-bottom: 15px; display: block !important;'
+        'margin-bottom: 15px; display: block !important; font-size: 11px;'
     );
     $('#supporting-card').prepend($address);
+
+    $('.supporting-statement-central-field').css({
+        'padding': '15px 0px 0px 0px',
+        'background-color': '#363636'
+    });
+
+    $('.supporting-statement-central-field p').css({
+        'color': '#ffffff',
+        'font-size': '11px'
+    });
 
     $('#duplicates-card').removeClass().addClass('card').addClass('card--expand').css({
         'order': 6,
