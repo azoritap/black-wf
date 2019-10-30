@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Black Wayfarer Lite
 // @namespace    https://github.com/klinsk/black-wf
-// @version      1.1.2
+// @version      1.1.3
 // @description  Black Wayfarer Review Lite Version
 // @author       klinsk
 // @match        https://wayfarer.nianticlabs.com/review
@@ -125,16 +125,6 @@ $(document).ready(function() {
         'font-size': '11px'
     });
 
-    $('.supporting-statement-central-field').css({
-        'padding': '15px 0px 0px 0px',
-        'background-color': '#353535'
-    });
-
-    $('.supporting-statement-central-field p').css({
-        'color': '#ffffff',
-        'font-size': '11px'
-    });
-
     $('.card-header__description').hide();
 
     //Comentarios ocultos review
@@ -179,6 +169,16 @@ $(document).ready(function() {
     $('#supporting-card').css({
         'order': 2,
         'height': '390px'
+    });
+
+    $('.supporting-statement-central-field').css({
+        'padding': '15px 0px 0px 0px',
+        'background-color': '#353535'
+    });
+
+    $('.supporting-statement-central-field p').css({
+        'color': '#ffffff',
+        'font-size': '11px'
     });
 
     $('#supporting-card .card__header.card-header').hide();
