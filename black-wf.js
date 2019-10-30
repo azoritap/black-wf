@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Black Wayfarer Lite
 // @namespace    https://github.com/klinsk/black-wf
-// @version      1.1.3
+// @version      1.1.4
 // @description  Black Wayfarer Review Lite Version
 // @author       klinsk
 // @match        https://wayfarer.nianticlabs.com/review
@@ -66,6 +66,19 @@ waitForKeyElements(".known-information-need-edit", function() {
     $('.known-information-need-edit[ng-model="answerCtrl.selectedDescriptionDisplay"]').css({
         'font-size': '11px'
     });
+});
+
+waitForKeyElements(".supporting-statement-central-field", function() {
+    $('.supporting-statement-central-field').css({
+        'padding': '15px 0px 0px 0px',
+        'background-color': '#353535'
+    });
+
+    $('.supporting-statement-central-field p').css({
+        'color': '#ffffff',
+        'font-size': '11px'
+    });
+
 });
 
 $(document).ready(function() {
@@ -169,16 +182,6 @@ $(document).ready(function() {
     $('#supporting-card').css({
         'order': 2,
         'height': '390px'
-    });
-
-    $('.supporting-statement-central-field').css({
-        'padding': '15px 0px 0px 0px',
-        'background-color': '#353535'
-    });
-
-    $('.supporting-statement-central-field p').css({
-        'color': '#ffffff',
-        'font-size': '11px'
     });
 
     $('#supporting-card .card__header.card-header').hide();
