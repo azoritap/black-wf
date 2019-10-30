@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Black Wayfarer Lite
 // @namespace    https://github.com/klinsk/black-wf
-// @version      1.1
+// @version      1.1.1
 // @description  Black Wayfarer Review Lite Version
 // @author       klinsk
 // @match        https://wayfarer.nianticlabs.com/review
@@ -219,6 +219,7 @@ $(document).ready(function() {
     var $address = $('#map-card .flex-map-row *:last-child').removeClass('ng-hide').attr('style',
         'margin-bottom: 15px; display: block !important; font-size: 11px;'
     );
+    $address.text($address.text().split(':')[1]);
     $('#supporting-card').prepend($address);
 
     $('.supporting-statement-central-field').css({
