@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Black Wayfarer Lite
 // @namespace    https://github.com/klinsk/black-wf
-// @version      1.1.4
+// @version      1.2
 // @description  Black Wayfarer Review Lite Version
 // @author       klinsk
 // @match        https://wayfarer.nianticlabs.com/review
@@ -54,17 +54,15 @@ waitForKeyElements(".card-area[ng-show*=EDIT]:not(.ng-hide)", function() {
     $('.bw-fiveStars').hide();
 });
 
-waitForKeyElements(".known-information-need-edit", function() {
-    $('.known-information-need-edit').css({
-        'background-color': '#353535'
+waitForKeyElements(".known-information div", function() {
+    $('.known-information div').css({
+        'font-size': '11px',
+        'color': '#ffffff',
+        'padding': '10px 0px 0px 0px'
     });
 
-    $('.known-information-need-edit[ng-model="answerCtrl.selectedTitleDisplay"]').css({
+    $('.known-information div[ng-if="!answerCtrl.needsTitleEdit"], .known-information div[ng-if="answerCtrl.needsTitleEdit"]').css({
         'font-size': '14px'
-    });
-
-    $('.known-information-need-edit[ng-model="answerCtrl.selectedDescriptionDisplay"]').css({
-        'font-size': '11px'
     });
 });
 
@@ -259,12 +257,32 @@ $(document).ready(function() {
     $('#duplicates-card .card-header__top').append($resetDuplicatesMapIcon);
 
     $('.known-information-card').css({
-        'max-width': '360px',
-        'min-width': '360px',
         'height': '100%',
         'background-color': '#353535',
         'color': '#ffffff',
-        'overflow-y': 'hidden'
+        'overflow-y': 'hidden',
+        'border': 'none'
+    });
+
+    $('.known-information-card .card-header').hide();
+
+    $('.known-information').css({
+        'background-color': '#353535',
+        'min-height': 'unset'
+    });
+
+    $('.known-information__title').css({
+        'padding-bottom': '5px'
+    });
+
+    $('.known-information__title').css({
+        'color': '#ffffff'
+    });
+
+    $('.known-information-group').hide();
+
+    $('.known-information-group').children().each(function() {
+        $('.known-information-group').parent().append($(this));
     });
 
     $('.known-information-card h3').css({
