@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Black Wayfarer Lite
 // @namespace    https://github.com/klinsk/black-wf
-// @version      1.2
+// @version      1.2.1
 // @description  Black Wayfarer Review Lite Version
 // @author       klinsk
 // @match        https://wayfarer.nianticlabs.com/review
@@ -14,10 +14,11 @@
 // ==/UserScript==
 
 var $ = window.$;
+var COUNTDOWN = 12;
 
 function sendCountdown() {
     var dummyNow = new Date();
-    dummyNow.setSeconds(dummyNow.getSeconds() + 10);
+    dummyNow.setSeconds(dummyNow.getSeconds() + COUNTDOWN);
     var countDownDate = dummyNow.getTime();
     $('#submitDiv button').append($('<span class="bw-countdown"></span>'));
     $('#submitDiv button').css({
@@ -61,6 +62,10 @@ waitForKeyElements(".known-information div", function() {
         'padding': '10px 0px 0px 0px'
     });
 
+    $('.known-information.known-information__title div').css({
+        'padding': '0px'
+    });
+
     $('.known-information div[ng-if="!answerCtrl.needsTitleEdit"], .known-information div[ng-if="answerCtrl.needsTitleEdit"]').css({
         'font-size': '14px'
     });
@@ -77,6 +82,10 @@ waitForKeyElements(".supporting-statement-central-field", function() {
         'font-size': '11px'
     });
 
+});
+
+waitForKeyElements('.known-information--placeholder[ng-if="answerCtrl.needsDescriptionEdit"]', function() {
+    $('.known-information--placeholder[ng-if="answerCtrl.needsDescriptionEdit"]').hide();
 });
 
 $(document).ready(function() {
@@ -303,6 +312,9 @@ $(document).ready(function() {
         'height': 'unset',
         'width': '100%'
     });
+
+    $('.known-information--placeholder[ng-show="answerCtrl.needsLocationEdit"]').hide();
+    $('.known-information--placeholder[ng-if="answerCtrl.needsDescriptionEdit"]').hide();
 
     $('.map-edit-card').css({
         'height': '400px',
