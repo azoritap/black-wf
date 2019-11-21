@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Black Wayfarer Lite
 // @namespace    https://github.com/klinsk/black-wf
-// @version      1.2.3
+// @version      1.3.0
 // @description  Black Wayfarer Review Lite Version
 // @author       klinsk
 // @match        https://wayfarer.nianticlabs.com/review
@@ -69,6 +69,8 @@ waitForKeyElements(".known-information div", function() {
     $('.known-information div[ng-if="!answerCtrl.needsTitleEdit"], .known-information div[ng-if="answerCtrl.needsTitleEdit"]').css({
         'font-size': '14px'
     });
+
+    $('.known-information-map__selection').hide();
 });
 
 waitForKeyElements(".supporting-statement-central-field", function() {
@@ -82,10 +84,6 @@ waitForKeyElements(".supporting-statement-central-field", function() {
         'font-size': '11px'
     });
 
-});
-
-waitForKeyElements('.known-information--placeholder[ng-if="answerCtrl.needsDescriptionEdit"]', function() {
-    $('.known-information--placeholder[ng-if="answerCtrl.needsDescriptionEdit"]').hide();
 });
 
 $(document).ready(function() {
@@ -231,9 +229,10 @@ $(document).ready(function() {
 
     $('#map-card .card-header__actions').append($resetMapIcon);
 
-    var $address = $('#map-card .flex-map-row *:last-child').removeClass('ng-hide').attr('style',
-        'margin-bottom: 15px; display: block !important; font-size: 11px;'
-    );
+    var $address = $('#photo-card .street-address.small').css({
+        'margin-bottom': '15px',
+        'font-size': '11px'
+    });
     $('#supporting-card').prepend($address);
 
     $('#duplicates-card').removeClass().addClass('card').addClass('card--expand').css({
@@ -317,9 +316,6 @@ $(document).ready(function() {
         'height': 'unset',
         'width': '100%'
     });
-
-    $('.known-information--placeholder[ng-show="answerCtrl.needsLocationEdit"]').hide();
-    $('.known-information--placeholder[ng-if="answerCtrl.needsDescriptionEdit"]').hide();
 
     $('.map-edit-card').css({
         'height': '400px',
