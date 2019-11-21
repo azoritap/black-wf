@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Black Wayfarer Lite
 // @namespace    https://github.com/klinsk/black-wf
-// @version      1.3.0
+// @version      1.3.1
 // @description  Black Wayfarer Review Lite Version
 // @author       klinsk
 // @match        https://wayfarer.nianticlabs.com/review
@@ -321,6 +321,8 @@ $(document).ready(function() {
         'height': '400px',
         'width': '100%'
     });
+
+    $('#map-card .flex-map-row *:last-child').hide();
 
     sendCountdown();
 });
